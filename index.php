@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>First Name</th>
     </tr>
   </thead>
   <tbody>
