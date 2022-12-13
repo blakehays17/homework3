@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <?php
-$servername = "localhost";
+$servername = "165.227.18.177";
 $username = "blakehay_s";
 $password = "wiZ#HZ^1]CAV";
 $dbname = "blakehay_sdb";
