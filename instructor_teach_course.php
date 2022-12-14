@@ -38,7 +38,7 @@
                     die("Connection failed: " . $conn->connect_error);
                     }
                     $instid = $_POST['id'];
-                    $sql = "SELECT course_id, course_subject, course_number, course_title, instructor_lastname from instructor i join course c on i.instructor_id = c.instructor_id where c.instructorid =" . $instid;
+                    $sql = "SELECT course_id, course_subject, course_number, course_title, instructor_lastname from instructor i join course c on i.instructor_id = c.instructor_id where c.instructor_id=".$instid;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
