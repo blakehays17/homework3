@@ -40,7 +40,7 @@
 
                     $stuid = $_GET['id'];
 
-                    $sql = "SELECT enroll_id, student_name, course_subject, course_number, course_title from student s join enroll e on s.student_id = e.student_id join course c on e.course_id = c.course_id where e.student_id=" . $stuid;
+                    $sql = "SELECT enroll_id, student_name, course_subject, course_number, course_title from student s join enroll e on s.student_id = e.student_id join course c on e.course_id = c.course_id where e.student_id= " . $stuid;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
