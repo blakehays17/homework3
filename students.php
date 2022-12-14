@@ -14,13 +14,13 @@
     <?php include("header.php"); ?>
     <div class="content">
         <h1>Students</h1>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Grade Level</th>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade Level</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,14 +43,15 @@
                     if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                    ?>
-                    <tr>
-                        <td><a href="student_enroll_course.php?id=<?=$row["student_id"]?>" class="btn btn-primary btn-sm"><?=$row["student_id"]?></a></td>
-                        <td><?=$row["student_name"]?></td>
-                        <td><?=$row["student_age"]?></td>
-                        <td><?=$row["student_grade"]?></td>
-                    </tr>
-                    <?php
+                ?>
+                <tr>
+                    <td><a href="student_enroll_course.php?id=<?=$row["student_id"]?>"
+                            class="btn btn-primary btn-sm"><?=$row["student_id"]?></a></td>
+                    <td><?=$row["student_name"]?></td>
+                    <td><?=$row["student_age"]?></td>
+                    <td><?=$row["student_grade"]?></td>
+                </tr>
+                <?php
                     }
                     } else {
                     echo "0 results";
