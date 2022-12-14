@@ -14,13 +14,14 @@
     <?php include("header.php"); ?>
     <div class="content">
         <h1>Instructors</h1>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Office</th>
+                    <th>Instructor ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Office</th>
+                    <th>Courses</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,13 +45,19 @@
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr>
-                        <td><?=$row["instructor_id"]?></td>
-                        <td><?=$row["instructor_firstname"]?></td>
-                        <td><?=$row["instructor_lastname"]?></td>
-                        <td><?=$row["instructor_office"]?></td>
-                    </tr>
-                    <?php
+                <tr>
+                    <td><?=$row["instructor_id"]?></td>
+                    <td><?=$row["instructor_firstname"]?></td>
+                    <td><?=$row["instructor_lastname"]?></td>
+                    <td><?=$row["instructor_office"]?></td>
+                    <td>
+                        <form method="post" action="instructor_teach_course.php">
+                            <input type="hidden" name="id" value="<?=$row["instructor_id"]?>" />
+                            <input type="submit" class="btn btn-success btn-sm" value="Courses" />
+                        </form>
+                    </td>
+                </tr>
+                <?php
                     }
                     } else {
                     echo "0 results";
